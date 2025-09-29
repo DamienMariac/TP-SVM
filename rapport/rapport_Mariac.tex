@@ -9,7 +9,6 @@
 \usepackage{hyperref}
 \usepackage{float}
 
-
 \setcounter{topnumber}{5}
 \setcounter{bottomnumber}{5}
 \setcounter{totalnumber}{10}
@@ -32,23 +31,22 @@
 
 \section*{Introduction}
 
-On souhaite mettre en pratique une techniques de classification sur données réelles et
+On souhaite mettre en pratique une technique de classification sur données réelles et
 simulées au moyen du package scikit-learn et d’apprendre à contrôler les paramètres garantissant leur flexibilité (hyper-paramètres, noyau).
 
-On va tester dans une première partie cette méthode sur des données simulé et sur le jeu de donnée Iris de Fisher.
-Puis dans une deuxieme partie, nous utiliserons cette technique sur de la classification de visages provenant  du module de Scikit-learn.
+On va tester dans une première partie cette méthode sur des données simulées et sur le jeu de données Iris de Fisher.
+Puis dans une deuxième partie, nous utiliserons cette technique sur de la classification de visages provenant du module de Scikit-learn.
 
 \section*{Partie 1 - Jeux de données numériques}
 
-\subsection*{Jeu de donnée simulé (gaussien)}
+\subsection*{Jeu de données simulées (gaussien)}
 
 On génère deux échantillons de données de taille 200 suivant une loi gaussienne bidimensionnelle. Les deux gaussiennes sont centrées en (1,1) et (-1/2,-1/2) et ont pour matrice de covariance $0.9 * I$.
-
 
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.65\textwidth]{images/gausgen.png}
-    \caption{Données gaussiens simulées}
+    \caption{Données gaussiennes simulées}
     \label{fig:gaussian_data}
 \end{figure}
 
@@ -67,68 +65,60 @@ On peut visualiser la frontière de décision du SVM sur la figure ci-dessous.
     \caption{Frontière de décision SVM avec noyau linéaire}
     \label{fig:linear_kernel}
 \end{figure}
-
 Il existe quelques points mal classés mais la frontière de décision est globalement correcte. On peut chercher à améliorer le modèle en cherchant un paramètre C plus adapté. Pour cela, on peut utiliser la validation croisée (cross-validation) pour tester plusieurs valeurs de C et choisir celle qui donne le meilleur score sur l'ensemble de validation.
-\begin{figure}[!htbp]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=0.35\textwidth]{images/gausslincvc.png}
     \caption{Frontière de décision SVM avec noyau linéaire et C par validation croisée}
     \label{fig:linear_kernel_3}
 \end{figure}
-On observe un score relativement similaire de $0.89$ lorsque nous avons un paramètre $C=0.1$.
+\par On observe un score relativement similaire de $0.89$ lorsque nous avons un paramètre $C=0.1$.
 \\
 \\
-Il est rassurant de voir que si on génère un nouveau jeu de données avec une gaussienne centrée en (5,5) et l'autre en (-1/2,-1/2), le SVM avec un noyau linéaire s'adapte très bien et obtient un score de 1.0 sur l'ensemble de test.
-Il seppare parfaitement les deux classes comme on peut le voir sur la figure ci-dessous.
+\par Il est rassurant de voir que si on génère un nouveau jeu de données avec une gaussienne centrée en (5,5) et l'autre en (-1/2,-1/2), le SVM avec un noyau linéaire s'adapte très bien et obtient un score de 1.0 sur l'ensemble de test.
+Il sépare parfaitement les deux classes comme on peut le voir sur la figure ci-dessous.
 
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.75\textwidth]{images/gausgen2.png}
-    \caption{gaussienne centrée en (5,5) et (-1/2,-1/2)}
+    \caption{Gaussienne centrée en (5,5) et (-1/2,-1/2)}
     \label{fig:linear_kernel_2}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.35\textwidth]{images/gausgenfront.png}
-    \caption{Frontière de décision SVM avec noyau linéaire (gaussienne centrée en (0,0) et (-1/2,-1/2))}
+    \caption{Frontière de décision SVM avec noyau linéaire (gaussienne centrée en (5,5) et (-1/2,-1/2))}
     \label{fig:linear_kernel_3}
 \end{figure}
 
+\subsection*{Jeu de données Iris de Fisher}
 
-
-
-
-\subsection*{Jeu de donnée Iris de Fisher}
-
-On utilise le jeu de donnée Iris de Fisher disponible dans Scikit-learn. On décide de ne garder que les classes 1 et 2 (resp versicolor et virginica) pour faire un problème de classification binaire.
+On utilise le jeu de données Iris de Fisher disponible dans Scikit-learn. On décide de ne garder que les classes 1 et 2 (resp. versicolor et virginica) pour faire un problème de classification binaire.
 On utilise seulement les deux premières caractéristiques (longueur et épaisseur des sépales) pour pouvoir visualiser les données en 2D.
-On sépare les données en un ensemble d'apprentissage qui correspond à 30\% des données.
-
+On sépare les données en un ensemble d'apprentissage qui correspond à 25\% des données.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.6\textwidth]{images/irisdata.png}
     \caption{Données Iris (classes 1 et 2)}
     \label{fig:iris_data}
-
 \end{figure}
 
-Après compilage du modèle SVM avec un noyau linéaire, on obtient un score de 0.747 sur l'ensemble de train, et un score de 0.68 sur l'ensemble de test.
+Après entraînement du modèle SVM avec un noyau linéaire, on obtient un score de \textbf{0.747 sur l'ensemble d'entraînement}, et un score de \textbf{0.68 sur l'ensemble de test}.
 \\
-Ce qui est moyennement satisfaisant mais normal vu que les données ne sont pas "vraiment" visuelement linéairement séparables au vu de la figure 3.
+Ce qui est moyennement satisfaisant mais normal vu que les données ne sont pas « vraiment » visuellement linéairement séparables au vu de la figure 6.
 \\
 On peut visualiser la frontière de décision du SVM sur la figure ci-dessous.
-
-\begin{figure}[h]
+\newpage
+\begin{figure}[h!]
     \centering
     \includegraphics[width=0.35\textwidth]{images/irislin.png}
     \caption{Frontière de décision SVM avec noyau linéaire}
     \label{fig:linear_kernel_iris}
 \end{figure}
 
-
-Il est naturel de se demander si un noyau linéaire est adapté à ce jeu de données. On essaye donc avec un noyau polynomial de degré 2. On obtient un score de 0.653 sur l'ensemble de train, et un score de 0.52 sur l'ensemble de test.
+\par Il est naturel de se demander si un noyau linéaire est adapté à ce jeu de données. On essaye donc avec un noyau polynomial de degré 2. On obtient un score de \textbf{0.653 sur l'ensemble d'entraînement}, et un score de \textbf{0.52 sur l'ensemble de test}.
 Ce qui est moins bon qu'avec le noyau linéaire. On peut visualiser la frontière de décision du SVM sur la figure ci-dessous.
 
 \begin{figure}[h]
@@ -143,7 +133,7 @@ Ce qui est moins bon qu'avec le noyau linéaire. On peut visualiser la frontièr
 \section*{Partie 2 - Classification des visages}
 
 Dans cette partie, on s'intéresse à la classification de visages. Autrement dit, étant donné une image de visage, on cherche à déterminer à quelle personne elle appartient.
-On utilise le jeu de données "Labeled Faces in the Wild" (LFW) disponible dans Scikit-Learn. On se limite à la classification de 2 personnes (Tony Blair et Colin Powell) afin de faire un problème de classification binaire.
+On utilise le jeu de données \textit{"Labeled Faces in the Wild" (LFW)} disponible dans \textbf{Scikit-Learn}. On se limite à la classification de 2 personnes (Tony Blair et Colin Powell) afin de faire un problème de classification binaire.
 On effectue une division aléatoire des données en ensembles d'entraînement et de test répartis en parts égales.
 \\
 \\
@@ -153,54 +143,56 @@ On effectue une division aléatoire des données en ensembles d'entraînement et
 \\
 On commence par utiliser un SVM avec un noyau linéaire en faisant varier le paramètre de régularisation C afin de voir son impact sur la frontière de décision.
 \\
-On affiche sur la figure ci-dessous  l'erreur de prédiction en fonction de C sur une échelle logarithmique entre \textbf{1e-5} et \textbf{1e5}.
+On affiche sur la figure ci-dessous l'erreur de prédiction en fonction de C sur une échelle logarithmique entre \textbf{1e-5} et \textbf{1e5}.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.65\textwidth]{images/Cimpact.png}
+    \includegraphics[width=0.5\textwidth]{images/Cimpact.png}
     \caption{Erreur de prédiction en fonction de C (noyau linéaire)}
     \label{fig:faceC}
 \end{figure}
 
-On obtient numériquement une erreur de prédiction minimale pour $C=0.001$ de score $0.91$ \textbf{sur l'ensemble de test}. C'est un très bon score.
+On obtient numériquement une erreur de prédiction minimale pour $C=0.001$ avec un score de $\textbf{0.91}$ \textbf{sur l'ensemble de test}. C'est un très bon score.
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
-    \includegraphics[width=0.75\textwidth]{images/predictiont1.png}
+    \includegraphics[width=0.55\textwidth]{images/predictiont1.png}
     \caption{Prédiction des visages (C=0.001, noyau linéaire)}
     \label{fig:faceC2}
 \end{figure}
+\newpage
 On observe que le modèle est capable de bien séparer les deux classes de visages. Bien que certaines images soient mal classées (1 fois sur 10), la majorité des visages sont correctement identifiés.
 \\
 \\
-On peut tester la robustesse du modèle en ajoutant des variables de nuisances. Cela permet de tester la sensibilité du modèle aux données bruitées.
-Pour cela on ajoute 300 variables de nuisances suivant une loi normale centrée réduite à chaque échantillon. On réentraine le modèle SVM avec un noyau linéaire et on évalue la performance sur l'ensemble de test.
 \\
-Bien qu'on obtient un score de 1 sur les données d'apprentissage (train), on obtient avec les données bruité un score de $\textbf{0.5}$ sur l'ensemble de test ce qui est fortement moins bon qu'avec les données non bruitées.
+On peut tester la robustesse du modèle en ajoutant des variables de nuisance. Cela permet de tester la sensibilité du modèle aux données bruitées.
+Pour cela on ajoute 300 variables de nuisance suivant une loi normale centrée réduite à chaque échantillon. On réentraîne le modèle SVM avec un noyau linéaire et on évalue la performance sur l'ensemble de test.
 \\
+Bien qu'on obtienne un score de 1 sur les données d'entraînement, on obtient avec les données bruitées un score de $\textbf{0.5}$ \textbf{sur l'ensemble de test}, ce qui est fortement moins bon qu'avec les données non bruitées.
 \\
-Afin de réduire l'impact des variables de nuisances, on procède par une réduction de dimension des données. On utilise pour ça l'ACP classique. Mais reste à choisir le nombre de composantes principales à garder. On décide d'utiliser la méthode du coude (elbow method) pour choisir le nombre optimal de composantes principales.
+
+Afin de réduire l'impact des variables de nuisance, on procède par une réduction de dimension des données. On utilise pour cela l'ACP classique. Mais reste à choisir le nombre de composantes principales à garder. On décide d'utiliser la méthode du coude (elbow method) pour choisir le nombre optimal de composantes principales.
+
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.95\textwidth]{images/eboulisacp.png}
     \caption{Méthode du coude pour choisir le nombre de composantes principales}
     \label{fig:elbow}
 \end{figure}
+
+Il apparaît plusieurs coudes sur la figure ci-dessus. On se contente de 5 composantes principales pour réduire la dimension des données, ce qui correspond à environ $\textbf{40 \% }$.
+On réentraîne le modèle SVM avec un noyau linéaire. On obtient un score de $\textbf{0.54}$ ce qui est légèrement mieux.
 \\
 \\
+On peut augmenter le nombre de composantes afin d'améliorer la performance du modèle. On décide de prendre 50, 100 et 200. On obtient respectivement des scores de $\textbf{0.85}$, $\textbf{0.87}$ et $\textbf{0.95}$ \textbf{sur les données d'entraînement}. Mais on observe que les scores sur les \textbf{données de test} sont respectivement de $\textbf{0.56}$, $\textbf{0.55}$ et $\textbf{0.49}$.
+Le score baisse pour 100 et 200 composantes, ce qui s'explique par le fait que l'on intègre des composantes de bruit, ce qui dégrade la performance du modèle. C'est de l'overfitting.
+Il semble que 50 composantes soient un bon compromis.
 \\
 \\
-Il apparait plusieurs coudes sur la figure ci-dessus. On se contente de 5 composantes principales pour réduire la dimension des données ce qui correspond à environ $\textbf{40 \% }$.
-On réentraine le modèle SVM avec un noyau linéaire. On obtient un score de $\textbf{0.54}$ ce qui est légèrement mieux.
-\\
-\\
-\\
-\\
-Il existe un biais potentiel dans le prétraitement des données. En effet, il survient une futie de données (data leakage).
+Il existe un biais potentiel dans le prétraitement des données. En effet, il survient une fuite de données (data leakage).
 Plus précisément, il survient dans le script entre la ligne 215 et 241 :
 
 \begin{verbatim}
-
 ####################################################################
 X = (np.mean(images, axis=3)).reshape(n_samples, -1)
 X -= np.mean(X, axis=0)
@@ -217,9 +209,7 @@ images_train, images_test = images[
 ####################################################################
 \end{verbatim}
 
-On normalise les données avant de les séparer en ensemble d'entraînement et de test. Cela introduit un biais car les statistiques (moyenne et écart-type) utilisées pour la normalisation sont calculées sur l'ensemble complet des données et non seulement sur l'ensemble d'entraînement.
+On normalise les données avant de les séparer en ensembles d'entraînement et de test. Cela introduit un biais car les statistiques (moyenne et écart-type) utilisées pour la normalisation sont calculées sur l'ensemble complet des données et non seulement sur l'ensemble d'entraînement.
 Les données de test influencent donc la normalisation des données d'entraînement, ce qui peut fausser l'évaluation de la performance du modèle lorsqu'on le teste sur l'ensemble de test.
-
-
 
 \end{document}

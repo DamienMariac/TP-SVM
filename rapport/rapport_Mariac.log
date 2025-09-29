@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.1.28)  29 SEP 2025 11:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.1.28)  29 SEP 2025 13:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -301,26 +301,26 @@ LaTeX Warning: Label `fig:linear_kernel_3' multiply defined.
 )
 \openout1 = `rapport_Mariac.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Info: Redefining \degres on input line 27.
-LaTeX Info: Redefining \up on input line 27.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Info: Redefining \degres on input line 26.
+LaTeX Info: Redefining \up on input line 26.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count299
@@ -374,16 +374,16 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 27.
+Package hyperref Info: Link coloring OFF on input line 26.
 (./rapport_Mariac.out) (./rapport_Mariac.out)
 \@outlinefile=\write3
 \openout3 = `rapport_Mariac.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 30.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 29.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 30.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 29.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
@@ -392,203 +392,186 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <images/gausgen.png, id=12, 875.9124pt x 309.3156pt>
 File: images/gausgen.png Graphic file (type png)
 <use images/gausgen.png>
-Package pdftex.def Info: images/gausgen.png  used on input line 50.
+Package pdftex.def Info: images/gausgen.png  used on input line 48.
 (pdftex.def)             Requested size: 295.90588pt x 104.49098pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--63
+Underfull \hbox (badness 10000) in paragraph at lines 53--61
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--63
+Underfull \hbox (badness 10000) in paragraph at lines 53--61
 
  []
 
 <images/gaussgeneline.png, id=14, 349.0641pt x 291.2481pt>
 File: images/gaussgeneline.png Graphic file (type png)
 <use images/gaussgeneline.png>
-Package pdftex.def Info: images/gaussgeneline.png  used on input line 66.
+Package pdftex.def Info: images/gaussgeneline.png  used on input line 64.
 (pdftex.def)             Requested size: 159.33821pt x 132.94472pt.
 <images/gausslincvc.png, id=15, 349.0641pt x 291.2481pt>
 File: images/gausslincvc.png Graphic file (type png)
 <use images/gausslincvc.png>
-Package pdftex.def Info: images/gausslincvc.png  used on input line 74.
+Package pdftex.def Info: images/gausslincvc.png  used on input line 71.
 (pdftex.def)             Requested size: 159.33821pt x 132.94472pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 71--83
-
- []
-
 [2
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.83 
-     
+l.75 \par
+          On observe un score relativement similaire de $0.89$ lorsque nous ...
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.83 
-      <./images/gausgen.png> <./images/gaussgeneline.png>]
+l.75 \par
+          On observe un score relativement similaire de $0.89$ lorsque nous ... <./images/gausgen.png> <./images/gaussgeneline.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 75--78
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--78
+
+ []
+
 <images/gausgen2.png, id=34, 875.9124pt x 309.3156pt>
 File: images/gausgen2.png Graphic file (type png)
 <use images/gausgen2.png>
-Package pdftex.def Info: images/gausgen2.png  used on input line 86.
+Package pdftex.def Info: images/gausgen2.png  used on input line 83.
 (pdftex.def)             Requested size: 341.43307pt x 120.57123pt.
 <images/gausgenfront.png, id=35, 328.1058pt x 291.2481pt>
 File: images/gausgenfront.png Graphic file (type png)
 <use images/gausgenfront.png>
-Package pdftex.def Info: images/gausgenfront.png  used on input line 93.
+Package pdftex.def Info: images/gausgenfront.png  used on input line 90.
 (pdftex.def)             Requested size: 159.33821pt x 141.4418pt.
- [3
+[3
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.107 
-      
+l.94 
+     
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.107 
-      
+l.94 
+      <./images/gausslincvc.png> <./images/gausgen2.png>]
+<images/irisdata.png, id=44, 403.9893pt x 298.4751pt>
+File: images/irisdata.png Graphic file (type png)
+<use images/irisdata.png>
+Package pdftex.def Info: images/irisdata.png  used on input line 103.
+(pdftex.def)             Requested size: 273.14923pt x 201.81723pt.
+ [4
 pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.107 
-       <./images/gausslincvc.png> <./images/gausgen2.png> <./images/gausgenfront.png>]
-<images/irisdata.png, id=46, 403.9893pt x 298.4751pt>
-File: images/irisdata.png Graphic file (type png)
-<use images/irisdata.png>
-Package pdftex.def Info: images/irisdata.png  used on input line 111.
-(pdftex.def)             Requested size: 273.14923pt x 201.81723pt.
-<images/irislin.png, id=47, 293.4162pt x 291.2481pt>
-File: images/irislin.png Graphic file (type png)
-<use images/irislin.png>
-Package pdftex.def Info: images/irislin.png  used on input line 125.
-(pdftex.def)             Requested size: 159.33821pt x 158.16489pt.
-<images/irispoly.png, id=48, 293.4162pt x 291.2481pt>
-File: images/irispoly.png Graphic file (type png)
-<use images/irispoly.png>
-Package pdftex.def Info: images/irispoly.png  used on input line 136.
-(pdftex.def)             Requested size: 159.33821pt x 158.16489pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[4
+l.113 \newpage
+              
 pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.143 \section
-              *{Partie 2 - Classification des visages}
+l.113 \newpage
+               <./images/gausgenfront.png> <./images/irisdata.png>]
+<images/irislin.png, id=54, 293.4162pt x 291.2481pt>
+File: images/irislin.png Graphic file (type png)
+<use images/irislin.png>
+Package pdftex.def Info: images/irislin.png  used on input line 116.
+(pdftex.def)             Requested size: 159.33821pt x 158.16489pt.
+<images/irispoly.png, id=55, 293.4162pt x 291.2481pt>
+File: images/irispoly.png Graphic file (type png)
+<use images/irispoly.png>
+Package pdftex.def Info: images/irispoly.png  used on input line 126.
+(pdftex.def)             Requested size: 159.33821pt x 158.16489pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--147
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--147
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--147
+
+ []
+
+[5
 pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.143 \section
-              *{Partie 2 - Classification des visages} <./images/irisdata.png> <./images/irislin.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 145--157
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 145--157
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 145--157
-
- []
-
-<images/Cimpact.png, id=58, 455.301pt x 339.669pt>
-File: images/Cimpact.png Graphic file (type png)
-<use images/Cimpact.png>
-Package pdftex.def Info: images/Cimpact.png  used on input line 160.
-(pdftex.def)             Requested size: 295.90588pt x 220.76149pt.
-[5
+l.147 
+      
 pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.166 
-      
+l.147 
+       <./images/irislin.png> <./images/irispoly.png>]
+<images/Cimpact.png, id=66, 455.301pt x 339.669pt>
+File: images/Cimpact.png Graphic file (type png)
+<use images/Cimpact.png>
+Package pdftex.def Info: images/Cimpact.png  used on input line 150.
+(pdftex.def)             Requested size: 227.62206pt x 169.81334pt.
+<images/predictiont1.png, id=67, 523.9575pt x 493.6041pt>
+File: images/predictiont1.png Graphic file (type png)
+<use images/predictiont1.png>
+Package pdftex.def Info: images/predictiont1.png  used on input line 159.
+(pdftex.def)             Requested size: 250.38564pt x 235.88034pt.
+ [6
 pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.166 
-       <./images/irispoly.png> <./images/Cimpact.png>]
-<images/predictiont1.png, id=68, 523.9575pt x 493.6041pt>
-File: images/predictiont1.png Graphic file (type png)
-<use images/predictiont1.png>
-Package pdftex.def Info: images/predictiont1.png  used on input line 169.
-(pdftex.def)             Requested size: 341.43307pt x 321.6598pt.
-<images/eboulisacp.png, id=69, 570.933pt x 354.123pt>
-File: images/eboulisacp.png Graphic file (type png)
-<use images/eboulisacp.png>
-Package pdftex.def Info: images/eboulisacp.png  used on input line 185.
-(pdftex.def)             Requested size: 432.48051pt x 268.2555pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 173--201
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 173--201
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 173--201
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 173--201
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 173--201
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 173--201
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 173--201
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 173--201
-
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[6
+l.163 \newpage
+              
 pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.201 
-       <./images/predictiont1.png>]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 202.
- (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-)
-Overfull \hbox (1.59433pt too wide) in paragraph at lines 218--218
-[]\T1/cmtt/m/n/12 train_idx, test_idx = indices[:X.shape[0] // 2], indices[X.shape[0] // 2:][] 
+l.163 \newpage
+               <./images/Cimpact.png> <./images/predictiont1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 164--173
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 164--173
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 164--173
+
+ []
+
+<images/eboulisacp.png, id=76, 570.933pt x 354.123pt>
+File: images/eboulisacp.png Graphic file (type png)
+<use images/eboulisacp.png>
+Package pdftex.def Info: images/eboulisacp.png  used on input line 178.
+(pdftex.def)             Requested size: 432.48051pt x 268.2555pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--194
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--194
+
  []
 
 [7
 pdfTeX warning (ext4): destination with the same identifier (name{figure.11}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.222 
-       <./images/eboulisacp.png>] [8] (./rapport_Mariac.aux)
+l.194 
+       <./images/eboulisacp.png>]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 195.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+Overfull \hbox (1.59433pt too wide) in paragraph at lines 210--210
+[]\T1/cmtt/m/n/12 train_idx, test_idx = indices[:X.shape[0] // 2], indices[X.shape[0] // 2:][] 
+ []
+
+[8] (./rapport_Mariac.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -601,18 +584,18 @@ Package rerunfilecheck Info: File `rapport_Mariac.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 12257 strings out of 474222
- 189219 string characters out of 5748733
+ 12259 strings out of 474222
+ 189241 string characters out of 5748733
  1930975 words of memory out of 5000000
- 34333 multiletter control sequences out of 15000+600000
- 574788 words of font info for 78 fonts, out of 8000000 for 9000
+ 34334 multiletter control sequences out of 15000+600000
+ 575472 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,7n,79p,465b,457s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on rapport_Mariac.pdf (8 pages, 932746 bytes).
+ 75i,7n,79p,514b,455s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on rapport_Mariac.pdf (8 pages, 958350 bytes).
 PDF statistics:
- 143 PDF objects out of 1000 (max. 8388607)
- 88 compressed objects within 1 object stream
+ 148 PDF objects out of 1000 (max. 8388607)
+ 91 compressed objects within 1 object stream
  25 named destinations out of 1000 (max. 500000)
  56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -400,45 +400,39 @@ print("Score apres reduction de dimension")
 
 # IL FAUT NORMALISER AVANT DE FAIRE LA PCA sinon ca compile pas
 
-scaler = StandardScaler()
-X_noisy_normalized = scaler.fit_transform(X_noisy)
 
-n_components = 5
-pca = PCA(n_components=n_components)
-X_noisy_pca = pca.fit_transform(X_noisy_normalized)
 
-_parameters = {'kernel': ['linear'], 'C': list(np.logspace(-3, 3, 3))}  # Réduisez les valeurs de C
+scaler.fit(X_noisy)
+X_ncr = scaler.transform(X_noisy)
 
-run_svm_cv(X_noisy_pca, y)
-# %%
-#######################################################################################################################
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from sklearn.decomposition import PCA
-from sklearn.svm import SVC
+n_components = 380  # jouer avec ce parametre
+pca = PCA(n_components=n_components,svd_solver='randomized').fit(X_ncr)
 
-# Division des données en ensembles d'entraînement et de test
-X_train, X_test, y_train, y_test = train_test_split(X_noisy, y, test_size=0.25, random_state=42)
+X_redu = pca.transform(X_ncr)
 
-# Normalisation des données
-scaler = StandardScaler()
-X_train_normalized = scaler.fit_transform(X_train)  # Fit sur l'ensemble d'entraînement
-X_test_normalized = scaler.transform(X_test)       # Transforme l'ensemble de test
+print("Score avant réduction :")
+run_svm_cv(X_noisy,y)
 
-# Application de la PCA
-n_components = 20
-pca = PCA(n_components=n_components)
-X_train_pca = pca.fit_transform(X_train_normalized)  # Fit sur l'ensemble d'entraînement
-X_test_pca = pca.transform(X_test_normalized)        # Transforme l'ensemble de test
+print("Score après réduction sur 380 composantes :")
+run_svm_cv(X_redu,y)
 
-# Entraînement du modèle SVM
-clf = SVC(kernel='linear', C=1)  # Vous pouvez ajuster le paramètre C
-clf.fit(X_train_pca, y_train)
+pca = PCA(n_components=200,svd_solver='randomized').fit(X_ncr)
+X_redu = pca.transform(X_ncr)
 
-# Calcul et affichage des scores
-train_score = clf.score(X_train_pca, y_train)
-test_score = clf.score(X_test_pca, y_test)
+print("Score après réduction sur 200 composantes :")
+run_svm_cv(X_redu,y)
 
-print("Score sur l'ensemble d'entraînement :", train_score)
-print("Score sur l'ensemble de test :", test_score)
+n_components = 100  # jouer avec ce parametre
+pca = PCA(n_components=n_components,svd_solver='randomized').fit(X_ncr)
+X_redu = pca.transform(X_ncr)
+
+
+print("Score après réduction sur 100 composantes")
+run_svm_cv(X_redu,y)
+
+pca = PCA(n_components=n_components,svd_solver='randomized').fit(X_ncr)
+X_redu = pca.transform(X_ncr)
+
+print("Score après réduction sur 50 composantes")
+run_svm_cv(X_redu,y)
 # %%
