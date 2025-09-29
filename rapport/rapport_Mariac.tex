@@ -1,0 +1,225 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{float}
+
+
+\setcounter{topnumber}{5}
+\setcounter{bottomnumber}{5}
+\setcounter{totalnumber}{10}
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\bottomfraction}{0.95}
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\floatpagefraction}{0.8}
+
+\geometry{margin=2.5cm}
+
+\title{Rapport de TP \\ \large{M2 AppStat}}
+\author{Damien Mariac}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+
+\section*{Introduction}
+
+On souhaite mettre en pratique une techniques de classification sur données réelles et
+simulées au moyen du package scikit-learn et d’apprendre à contrôler les paramètres garantissant leur flexibilité (hyper-paramètres, noyau).
+
+On va tester dans une première partie cette méthode sur des données simulé et sur le jeu de donnée Iris de Fisher.
+Puis dans une deuxieme partie, nous utiliserons cette technique sur de la classification de visages provenant  du module de Scikit-learn.
+
+\section*{Partie 1 - Jeux de données numériques}
+
+\subsection*{Jeu de donnée simulé (gaussien)}
+
+On génère deux échantillons de données de taille 200 suivant une loi gaussienne bidimensionnelle. Les deux gaussiennes sont centrées en (1,1) et (-1/2,-1/2) et ont pour matrice de covariance $0.9 * I$.
+
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.65\textwidth]{images/gausgen.png}
+    \caption{Données gaussiens simulées}
+    \label{fig:gaussian_data}
+\end{figure}
+
+On décide de séparer les données en deux ensembles : un ensemble d'apprentissage et un ensemble de test. On utilise 50\% des données pour l'apprentissage et 50\% pour le test.
+\\
+\\
+Avec l'ensemble d'apprentissage, on cherche à ajuster un SVM avec un noyau \textbf{linéaire}. On utilise la classe SVC de Scikit-learn avec le paramètre C=1.0 (paramètre de régularisation).
+Puis on évalue la performance de ce modèle sur l'ensemble de test. Ceci nous donne un score de 0.89 ce qui est plutôt bon.
+\\
+\\
+On peut visualiser la frontière de décision du SVM sur la figure ci-dessous.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.35\textwidth]{images/gaussgeneline.png}
+    \caption{Frontière de décision SVM avec noyau linéaire}
+    \label{fig:linear_kernel}
+\end{figure}
+
+Il existe quelques points mal classés mais la frontière de décision est globalement correcte. On peut chercher à améliorer le modèle en cherchant un paramètre C plus adapté. Pour cela, on peut utiliser la validation croisée (cross-validation) pour tester plusieurs valeurs de C et choisir celle qui donne le meilleur score sur l'ensemble de validation.
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.35\textwidth]{images/gausslincvc.png}
+    \caption{Frontière de décision SVM avec noyau linéaire et C par validation croisée}
+    \label{fig:linear_kernel_3}
+\end{figure}
+On observe un score relativement similaire de $0.89$ lorsque nous avons un paramètre $C=0.1$.
+\\
+\\
+Il est rassurant de voir que si on génère un nouveau jeu de données avec une gaussienne centrée en (5,5) et l'autre en (-1/2,-1/2), le SVM avec un noyau linéaire s'adapte très bien et obtient un score de 1.0 sur l'ensemble de test.
+Il seppare parfaitement les deux classes comme on peut le voir sur la figure ci-dessous.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/gausgen2.png}
+    \caption{gaussienne centrée en (5,5) et (-1/2,-1/2)}
+    \label{fig:linear_kernel_2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.35\textwidth]{images/gausgenfront.png}
+    \caption{Frontière de décision SVM avec noyau linéaire (gaussienne centrée en (0,0) et (-1/2,-1/2))}
+    \label{fig:linear_kernel_3}
+\end{figure}
+
+
+
+
+
+\subsection*{Jeu de donnée Iris de Fisher}
+
+On utilise le jeu de donnée Iris de Fisher disponible dans Scikit-learn. On décide de ne garder que les classes 1 et 2 (resp versicolor et virginica) pour faire un problème de classification binaire.
+On utilise seulement les deux premières caractéristiques (longueur et épaisseur des sépales) pour pouvoir visualiser les données en 2D.
+On sépare les données en un ensemble d'apprentissage qui correspond à 30\% des données.
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/irisdata.png}
+    \caption{Données Iris (classes 1 et 2)}
+    \label{fig:iris_data}
+
+\end{figure}
+
+Après compilage du modèle SVM avec un noyau linéaire, on obtient un score de 0.747 sur l'ensemble de train, et un score de 0.68 sur l'ensemble de test.
+\\
+Ce qui est moyennement satisfaisant mais normal vu que les données ne sont pas "vraiment" visuelement linéairement séparables au vu de la figure 3.
+\\
+On peut visualiser la frontière de décision du SVM sur la figure ci-dessous.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.35\textwidth]{images/irislin.png}
+    \caption{Frontière de décision SVM avec noyau linéaire}
+    \label{fig:linear_kernel_iris}
+\end{figure}
+
+
+Il est naturel de se demander si un noyau linéaire est adapté à ce jeu de données. On essaye donc avec un noyau polynomial de degré 2. On obtient un score de 0.653 sur l'ensemble de train, et un score de 0.52 sur l'ensemble de test.
+Ce qui est moins bon qu'avec le noyau linéaire. On peut visualiser la frontière de décision du SVM sur la figure ci-dessous.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.35\textwidth]{images/irispoly.png}
+    \caption{Frontière de décision SVM avec noyau polynomial de degré 2}
+    \label{fig:poly2_kernel_iris}
+\end{figure}
+
+\vspace{4cm}
+
+\section*{Partie 2 - Classification des visages}
+
+Dans cette partie, on s'intéresse à la classification de visages. Autrement dit, étant donné une image de visage, on cherche à déterminer à quelle personne elle appartient.
+On utilise le jeu de données "Labeled Faces in the Wild" (LFW) disponible dans Scikit-Learn. On se limite à la classification de 2 personnes (Tony Blair et Colin Powell) afin de faire un problème de classification binaire.
+On effectue une division aléatoire des données en ensembles d'entraînement et de test répartis en parts égales.
+\\
+\\
+\\
+\underline{Impact du paramètre C :}
+\\
+\\
+On commence par utiliser un SVM avec un noyau linéaire en faisant varier le paramètre de régularisation C afin de voir son impact sur la frontière de décision.
+\\
+On affiche sur la figure ci-dessous  l'erreur de prédiction en fonction de C sur une échelle logarithmique entre \textbf{1e-5} et \textbf{1e5}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.65\textwidth]{images/Cimpact.png}
+    \caption{Erreur de prédiction en fonction de C (noyau linéaire)}
+    \label{fig:faceC}
+\end{figure}
+
+On obtient numériquement une erreur de prédiction minimale pour $C=0.001$ de score $0.91$ \textbf{sur l'ensemble de test}. C'est un très bon score.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/predictiont1.png}
+    \caption{Prédiction des visages (C=0.001, noyau linéaire)}
+    \label{fig:faceC2}
+\end{figure}
+On observe que le modèle est capable de bien séparer les deux classes de visages. Bien que certaines images soient mal classées (1 fois sur 10), la majorité des visages sont correctement identifiés.
+\\
+\\
+On peut tester la robustesse du modèle en ajoutant des variables de nuisances. Cela permet de tester la sensibilité du modèle aux données bruitées.
+Pour cela on ajoute 300 variables de nuisances suivant une loi normale centrée réduite à chaque échantillon. On réentraine le modèle SVM avec un noyau linéaire et on évalue la performance sur l'ensemble de test.
+\\
+Bien qu'on obtient un score de 1 sur les données d'apprentissage (train), on obtient avec les données bruité un score de $\textbf{0.5}$ sur l'ensemble de test ce qui est fortement moins bon qu'avec les données non bruitées.
+\\
+\\
+Afin de réduire l'impact des variables de nuisances, on procède par une réduction de dimension des données. On utilise pour ça l'ACP classique. Mais reste à choisir le nombre de composantes principales à garder. On décide d'utiliser la méthode du coude (elbow method) pour choisir le nombre optimal de composantes principales.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.95\textwidth]{images/eboulisacp.png}
+    \caption{Méthode du coude pour choisir le nombre de composantes principales}
+    \label{fig:elbow}
+\end{figure}
+\\
+\\
+\\
+\\
+Il apparait plusieurs coudes sur la figure ci-dessus. On se contente de 5 composantes principales pour réduire la dimension des données ce qui correspond à environ $\textbf{40 \% }$.
+On réentraine le modèle SVM avec un noyau linéaire. On obtient un score de $\textbf{0.54}$ ce qui est légèrement mieux.
+\\
+\\
+\\
+\\
+Il existe un biais potentiel dans le prétraitement des données. En effet, il survient une futie de données (data leakage).
+Plus précisément, il survient dans le script entre la ligne 215 et 241 :
+
+\begin{verbatim}
+
+####################################################################
+X = (np.mean(images, axis=3)).reshape(n_samples, -1)
+X -= np.mean(X, axis=0)
+X /= np.std(X, axis=0)
+
+indices = np.random.permutation(X.shape[0])
+train_idx, test_idx = indices[:X.shape[0] // 2], indices[X.shape[0] // 2:]
+
+X_train, X_test = X[train_idx, :], X[test_idx, :]
+y_train, y_test = y[train_idx], y[test_idx]
+
+images_train, images_test = images[
+    train_idx, :, :, :], images[test_idx, :, :, :]
+####################################################################
+\end{verbatim}
+
+On normalise les données avant de les séparer en ensemble d'entraînement et de test. Cela introduit un biais car les statistiques (moyenne et écart-type) utilisées pour la normalisation sont calculées sur l'ensemble complet des données et non seulement sur l'ensemble d'entraînement.
+Les données de test influencent donc la normalisation des données d'entraînement, ce qui peut fausser l'évaluation de la performance du modèle lorsqu'on le teste sur l'ensemble de test.
+
+
+
+\end{document}
