@@ -396,43 +396,60 @@ plt.show()
 
 #%%
 
-print("Score apres reduction de dimension")
+# Je fais l'acp sur les données bruitées et uniquement sur les données d'entrainement
+# sinon on fait la même erreur quand nous fait remarquer la question 7
 
-# IL FAUT NORMALISER AVANT DE FAIRE LA PCA sinon ca compile pas
+# afin d'optimiser le code, j'utilise des pipelines
+
+from sklearn.pipeline import Pipeline # pour enchaîner les étapes
+from joblib import Memory # calcul en parallèle et mise en cache
+from sklearn.svm import LinearSVC
+
+# cette fois je fais moite-moite
+X_tr, X_te, y_tr, y_te = train_test_split(X_noisy, y, test_size=0.5, random_state=42, stratify=y)
+
+memory = Memory(".cache_svm", verbose=0)
+
+pipe5 = Pipeline([
+    ("scaler", StandardScaler()),
+    ("pca", PCA(n_components=5, svd_solver="randomized")),
+    ("clf", LinearSVC(dual=True, max_iter=5000))
+], memory=memory)
+
+pipe50 = Pipeline([
+    ("scaler", StandardScaler()),
+    ("pca", PCA(n_components=50, svd_solver="randomized")),
+    ("clf", LinearSVC(dual=True, max_iter=5000))
+], memory=memory)
+
+pipe75 = Pipeline([
+    ("scaler", StandardScaler()),
+    ("pca", PCA(n_components=75, svd_solver="randomized")),
+    ("clf", LinearSVC(dual=True, max_iter=5000))
+], memory=memory)
+
+grid5 = GridSearchCV(pipe5, {"clf__C": np.logspace(-3,3,7)}, cv=3, n_jobs=-1)
+grid5.fit(X_tr, y_tr)
+
+print("Best pour 5 composantes C:", grid5.best_params_["clf__C"])
+print("Train:", grid5.best_estimator_.score(X_tr, y_tr))
+print("Test :", grid5.best_estimator_.score(X_te, y_te))
 
 
 
-scaler.fit(X_noisy)
-X_ncr = scaler.transform(X_noisy)
+grid50 = GridSearchCV(pipe50, {"clf__C": np.logspace(-3,3,7)}, cv=3, n_jobs=-1)
+grid50.fit(X_tr, y_tr)
 
-n_components = 380  # jouer avec ce parametre
-pca = PCA(n_components=n_components,svd_solver='randomized').fit(X_ncr)
+print("Best pour 50 composantes C:", grid50.best_params_["clf__C"])
+print("Train:", grid50.best_estimator_.score(X_tr, y_tr))
+print("Test :", grid50.best_estimator_.score(X_te, y_te))
 
-X_redu = pca.transform(X_ncr)
+grid75 = GridSearchCV(pipe75, {"clf__C": np.logspace(-3,3,7)}, cv=3, n_jobs=-1)
+grid75.fit(X_tr, y_tr)
 
-print("Score avant réduction :")
-run_svm_cv(X_noisy,y)
-
-print("Score après réduction sur 380 composantes :")
-run_svm_cv(X_redu,y)
-
-pca = PCA(n_components=200,svd_solver='randomized').fit(X_ncr)
-X_redu = pca.transform(X_ncr)
-
-print("Score après réduction sur 200 composantes :")
-run_svm_cv(X_redu,y)
-
-n_components = 100  # jouer avec ce parametre
-pca = PCA(n_components=n_components,svd_solver='randomized').fit(X_ncr)
-X_redu = pca.transform(X_ncr)
+print("Best pour 75 composantes C:", grid75.best_params_["clf__C"])
+print("Train:", grid75.best_estimator_.score(X_tr, y_tr))
+print("Test :", grid75.best_estimator_.score(X_te, y_te))
 
 
-print("Score après réduction sur 100 composantes")
-run_svm_cv(X_redu,y)
-
-pca = PCA(n_components=n_components,svd_solver='randomized').fit(X_ncr)
-X_redu = pca.transform(X_ncr)
-
-print("Score après réduction sur 50 composantes")
-run_svm_cv(X_redu,y)
 # %%

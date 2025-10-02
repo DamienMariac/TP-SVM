@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.1.28)  29 SEP 2025 13:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.1.28)  2 OCT 2025 12:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -481,97 +481,126 @@ File: images/irispoly.png Graphic file (type png)
 <use images/irispoly.png>
 Package pdftex.def Info: images/irispoly.png  used on input line 126.
 (pdftex.def)             Requested size: 159.33821pt x 158.16489pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 135--147
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 135--147
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 135--147
-
- []
-
-[5
+ [5
 pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.147 
-      
+l.131 \newpage
+              
 pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.147 
-       <./images/irislin.png> <./images/irispoly.png>]
-<images/Cimpact.png, id=66, 455.301pt x 339.669pt>
+l.131 \newpage
+               <./images/irislin.png> <./images/irispoly.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 135--147
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--147
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--147
+
+ []
+
+<images/Cimpact.png, id=64, 455.301pt x 339.669pt>
 File: images/Cimpact.png Graphic file (type png)
 <use images/Cimpact.png>
 Package pdftex.def Info: images/Cimpact.png  used on input line 150.
 (pdftex.def)             Requested size: 227.62206pt x 169.81334pt.
-<images/predictiont1.png, id=67, 523.9575pt x 493.6041pt>
+<images/predictiont1.png, id=65, 523.9575pt x 493.6041pt>
 File: images/predictiont1.png Graphic file (type png)
 <use images/predictiont1.png>
-Package pdftex.def Info: images/predictiont1.png  used on input line 159.
-(pdftex.def)             Requested size: 250.38564pt x 235.88034pt.
- [6
+Package pdftex.def Info: images/predictiont1.png  used on input line 163.
+(pdftex.def)             Requested size: 341.43307pt x 321.6598pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[6
 pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.163 \newpage
-              
-pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.163 \newpage
-               <./images/Cimpact.png> <./images/predictiont1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 164--173
+l.167 \newpage
+               <./images/Cimpact.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 168--177
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 164--173
+Underfull \hbox (badness 10000) in paragraph at lines 168--177
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 164--173
+Underfull \hbox (badness 10000) in paragraph at lines 168--177
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 178--182
 
  []
 
 <images/eboulisacp.png, id=76, 570.933pt x 354.123pt>
 File: images/eboulisacp.png Graphic file (type png)
 <use images/eboulisacp.png>
-Package pdftex.def Info: images/eboulisacp.png  used on input line 178.
-(pdftex.def)             Requested size: 432.48051pt x 268.2555pt.
+Package pdftex.def Info: images/eboulisacp.png  used on input line 185.
+(pdftex.def)             Requested size: 341.43307pt x 211.78378pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 183--194
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 183--194
-
- []
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [7
-pdfTeX warning (ext4): destination with the same identifier (name{figure.11}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.194 
-       <./images/eboulisacp.png>]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 195.
- (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+l.190 \newpage
+               <./images/predictiont1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 191--206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--206
+
+ []
+
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 207.
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
-Overfull \hbox (1.59433pt too wide) in paragraph at lines 210--210
+Overfull \hbox (1.59433pt too wide) in paragraph at lines 222--222
 []\T1/cmtt/m/n/12 train_idx, test_idx = indices[:X.shape[0] // 2], indices[X.shape[0] // 2:][] 
  []
 
-[8] (./rapport_Mariac.aux)
+[8
+pdfTeX warning (ext4): destination with the same identifier (name{figure.11}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.222 \end{verbatim}
+                     <./images/eboulisacp.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 224--229
+
+ []
+
+[9] (./rapport_Mariac.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -584,18 +613,18 @@ Package rerunfilecheck Info: File `rapport_Mariac.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 12259 strings out of 474222
- 189241 string characters out of 5748733
- 1930975 words of memory out of 5000000
+ 12260 strings out of 474222
+ 189247 string characters out of 5748733
+ 1929975 words of memory out of 5000000
  34334 multiletter control sequences out of 15000+600000
  575472 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,7n,79p,514b,455s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on rapport_Mariac.pdf (8 pages, 958350 bytes).
+ 75i,7n,79p,667b,605s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on rapport_Mariac.pdf (9 pages, 976724 bytes).
 PDF statistics:
- 148 PDF objects out of 1000 (max. 8388607)
- 91 compressed objects within 1 object stream
- 25 named destinations out of 1000 (max. 500000)
+ 162 PDF objects out of 1000 (max. 8388607)
+ 100 compressed objects within 1 object stream
+ 26 named destinations out of 1000 (max. 500000)
  56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

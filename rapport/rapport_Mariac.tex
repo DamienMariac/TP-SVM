@@ -128,7 +128,7 @@ Ce qui est moins bon qu'avec le noyau linéaire. On peut visualiser la frontièr
     \label{fig:poly2_kernel_iris}
 \end{figure}
 
-\vspace{4cm}
+\newpage
 
 \section*{Partie 2 - Classification des visages}
 
@@ -152,11 +152,15 @@ On affiche sur la figure ci-dessous l'erreur de prédiction en fonction de C sur
     \label{fig:faceC}
 \end{figure}
 
-On obtient numériquement une erreur de prédiction minimale pour $C=0.001$ avec un score de $\textbf{0.91}$ \textbf{sur l'ensemble de test}. C'est un très bon score.
+On obtient numériquement un score maximale de $\textbf{0.91}$ pour $C=0.001$ \textbf{sur l'ensemble de test}. C'est un très bon score.
+De ce qui est de l'allure de la courbe, on observe que pour des valeurs de C très petites (inférieures à 1e-3), l'erreur de prédiction est élevée. Cela s'explique par le fait que le modèle est trop régularisé et ne s'adapte pas bien aux données d'entraînement (sous-apprentissage).
+Pour des valeurs de C très grandes (supérieures à 1e3), la pénalisation des erreurs augmente et donne une meilleure adaptation aux données d'entraînement. Une fois que le meilleur hyperplan linéaire qui généralise bien est trouvé, changer
+C ne modifie plus les vecteurs supports actifs ni la frontière (conditions KKT inchangées) ce qui forme ce plateau à partir de $C=10^{-2}$.
+
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.55\textwidth]{images/predictiont1.png}
+    \includegraphics[width=0.75\textwidth]{images/predictiont1.png}
     \caption{Prédiction des visages (C=0.001, noyau linéaire)}
     \label{fig:faceC2}
 \end{figure}
@@ -171,25 +175,33 @@ Pour cela on ajoute 300 variables de nuisance suivant une loi normale centrée r
 Bien qu'on obtienne un score de 1 sur les données d'entraînement, on obtient avec les données bruitées un score de $\textbf{0.5}$ \textbf{sur l'ensemble de test}, ce qui est fortement moins bon qu'avec les données non bruitées.
 \\
 
-Afin de réduire l'impact des variables de nuisance, on procède par une réduction de dimension des données. On utilise pour cela l'ACP classique. Mais reste à choisir le nombre de composantes principales à garder. On décide d'utiliser la méthode du coude (elbow method) pour choisir le nombre optimal de composantes principales.
+Afin de réduire l'impact des variables de nuisance, on procède par une réduction de dimension sur un sous ensemble d'entrainement des données bruités. On utilise pour cela l'ACP classique. Mais reste à choisir le nombre de composantes principales à garder.
+\\
+\\
+Pour identifier un petit nombre de composantes, on décide d'utiliser la méthode du coude (elbow method) pour choisir le nombre optimal de composantes principales.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.95\textwidth]{images/eboulisacp.png}
+    \includegraphics[width=0.75\textwidth]{images/eboulisacp.png}
     \caption{Méthode du coude pour choisir le nombre de composantes principales}
     \label{fig:elbow}
 \end{figure}
 
+\newpage
 Il apparaît plusieurs coudes sur la figure ci-dessus. On se contente de 5 composantes principales pour réduire la dimension des données, ce qui correspond à environ $\textbf{40 \% }$.
-On réentraîne le modèle SVM avec un noyau linéaire. On obtient un score de $\textbf{0.54}$ ce qui est légèrement mieux.
+On réentraîne le modèle SVM avec un noyau linéaire. On obtient un score de $\textbf{0.579}$ sur \textbf{les données d'entrainements} et un score de $\textbf{0.600}$ \textbf{sur les données de test} ce qui est légèrement mieux.
 \\
 \\
-On peut augmenter le nombre de composantes afin d'améliorer la performance du modèle. On décide de prendre 50, 100 et 200. On obtient respectivement des scores de $\textbf{0.85}$, $\textbf{0.87}$ et $\textbf{0.95}$ \textbf{sur les données d'entraînement}. Mais on observe que les scores sur les \textbf{données de test} sont respectivement de $\textbf{0.56}$, $\textbf{0.55}$ et $\textbf{0.49}$.
-Le score baisse pour 100 et 200 composantes, ce qui s'explique par le fait que l'on intègre des composantes de bruit, ce qui dégrade la performance du modèle. C'est de l'overfitting.
-Il semble que 50 composantes soient un bon compromis.
+On peut augmenter le nombre de composantes afin d'améliorer la performance du modèle en prenant un nombre arbitraire et grand de composantes. On décide de prendre 50 et 75. On obtient respectivement des scores de $\textbf{0.626}$ et $\textbf{0.815}$ \textbf{sur les données d'entraînement}. Mais on observe que les scores sur les \textbf{données de test} sont respectivement de $\textbf{0.511}$ et $\textbf{0.495}$.
+On observe que la performance du modèle diminue sur les données de test lorsque le nombre de composantes augmente bien que celui-ci augmente sur les données d'entrainemet. Cela s'explique par le fait que le modèle s'adapte trop aux données qui l'entraîne (sur-apprentissage) et le généralise mal aux nouvelles données.
 \\
 \\
-Il existe un biais potentiel dans le prétraitement des données. En effet, il survient une fuite de données (data leakage).
+On pourrait considérer un plus grand nombre de composantes mais ca serait trop coûteux en temps de calcul et n'améliorerait pas forcément la performance du modèle vu que la performance diminue déjà au bout de 75.
+\\
+\\
+\\
+\\
+Il existe un biais dans le prétraitement des données. En effet, il survient une \textbf{fuite} de données (data leakage).
 Plus précisément, il survient dans le script entre la ligne 215 et 241 :
 
 \begin{verbatim}
@@ -211,5 +223,8 @@ images_train, images_test = images[
 
 On normalise les données avant de les séparer en ensembles d'entraînement et de test. Cela introduit un biais car les statistiques (moyenne et écart-type) utilisées pour la normalisation sont calculées sur l'ensemble complet des données et non seulement sur l'ensemble d'entraînement.
 Les données de test influencent donc la normalisation des données d'entraînement, ce qui peut fausser l'évaluation de la performance du modèle lorsqu'on le teste sur l'ensemble de test.
+\\
+\\
+Ce biais à aussi une repercussion sur l'ACP. Comme on a normalisé les données avant de les séparer puis bruité puis renormalisé encore une fois (mais cette fois que par rapport aux données de train), les composantes principales sont influencées par l'ensemble complet des données, y compris les données de test. Cela peut conduire à une sélection de composantes principales qui ne sont pas représentatives uniquement des données d'entraînement, faussant ainsi la réduction de dimension et la performance du modèle SVM entraîné sur ces données réduites.
 
 \end{document}
